@@ -19,7 +19,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class FlightCrewMembers {
+public class FlightCrewMember {
 
 	@Mandatory
 	@ValidString(pattern = "^[A-Z]{2-3}\\d{6}$")
