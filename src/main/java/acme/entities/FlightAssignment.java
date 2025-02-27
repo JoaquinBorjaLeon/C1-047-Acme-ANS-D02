@@ -3,12 +3,15 @@ package acme.entities;
 
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
 
+import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
@@ -20,12 +23,14 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class FlightAssignment {
+public class FlightAssignment extends AbstractEntity {
+
+	private static final long	serialVersionUID	= 1L;
 
 	@Mandatory
 	@Valid
-	@Column(unique = true)
-	private FlightCrewMember allocatedFlightCrewMember;
+	@ManyToOne(optional = false)
+	private FlightCrewMember	allocatedFlightCrewMember;
 
 
 	private enum Duty {
@@ -36,6 +41,7 @@ public class FlightAssignment {
 	@Mandatory
 	@Valid
 	@Automapped
+	@Enumerated(EnumType.STRING)
 	private Duty	duty;
 
 	@Mandatory
@@ -52,6 +58,7 @@ public class FlightAssignment {
 	@Mandatory
 	@Valid
 	@Automapped
+	@Enumerated(EnumType.STRING)
 	private Status	currentStatus;
 
 	@Optional
