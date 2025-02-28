@@ -1,10 +1,8 @@
 
-package acme.entities;
-
+package acme.entities.technician;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
@@ -38,17 +36,12 @@ public class Technichian extends AbstractEntity {
 
 	@Mandatory
 	@Column(name = "passedHealthTest")
+	@Automapped
 	private Boolean hasPassedAnnualHealthTest;
 
 	@ValidNumber(min=0)
 	@Mandatory
 	@Automapped
 	private Integer yearsOfExperience;
-	
-//	TO-DO: certifications should be an independent entity with a many to one relation with Technician
-//	@ValidString(max = 255)
-//	@Optional
-//	@Automapped
-//	private String certifications;
 
 }
