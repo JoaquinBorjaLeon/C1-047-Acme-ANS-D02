@@ -1,0 +1,4 @@
+key,key:userAccount,identifier,phoneNumber,address,city,country,points
+customer-01,user-account-customer-01,ABC123456,123456789,"Calle Inventada 1 1A","Mérida","España",250750
+customer-02,user-account-customer-02,DEF789012,987654321,"Calle Inventada 2 2B","Madrid","España",750250
+customer-03,user-account-customer-03,GHI345678,012301234,"Calle Inventada 3 3C","Ciudad Real","España",34
