@@ -10,11 +10,12 @@ import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
 
 import acme.client.components.basis.AbstractEntity;
+import acme.client.components.datatypes.Money;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
-import acme.client.components.validation.ValidNumber;
+import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
 import lombok.Getter;
 import lombok.Setter;
@@ -41,10 +42,10 @@ public class Booking extends AbstractEntity {
 	@Automapped
 	private TravelClass			travelClass;
 
-	@ValidNumber(min = 0)
+	@ValidMoney
 	@Mandatory
 	@Automapped
-	private Double				price;
+	private Money				price;
 
 	@ValidString(pattern = "^\\d{4}$")
 	@Optional
@@ -55,6 +56,11 @@ public class Booking extends AbstractEntity {
 	@Mandatory
 	@Automapped
 	private Customer			customer;
+
+	@ManyToOne
+	@Mandatory
+	@Automapped
+	private Flight				flight;
 
 
 	public enum TravelClass {
