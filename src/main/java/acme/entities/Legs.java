@@ -12,6 +12,7 @@ import javax.persistence.TemporalType;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.validation.Mandatory;
+import acme.validation.ValidFlightNumber;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,6 +26,7 @@ public class Legs extends AbstractEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	@Mandatory
+	@ValidFlightNumber
 	@Column(unique = true)
 	private String				flightNumber;
 
