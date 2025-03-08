@@ -33,7 +33,7 @@ public class Customer extends AbstractRole {
 	@ValidString
 	@Mandatory
 	@Automapped
-	private String				address;
+	private String				physicalAddress;
 
 	@ValidString(max = 50)
 	@Mandatory
@@ -48,5 +48,5 @@ public class Customer extends AbstractRole {
 	@ValidNumber(max = 500000, min = 0)
 	@Optional
 	@Automapped
-	private Integer				points;
+	private Integer				earnedPoints;
 }
