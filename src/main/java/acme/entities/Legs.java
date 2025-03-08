@@ -12,7 +12,7 @@ import javax.persistence.TemporalType;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.validation.Mandatory;
-import acme.validation.ValidFlightNumber;
+import acme.constraints.ValidFlightNumber;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
