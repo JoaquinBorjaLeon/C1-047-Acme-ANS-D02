@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.datatypes.Money;
@@ -32,9 +34,9 @@ public class Booking extends AbstractEntity {
 	@Column(unique = true)
 	private String				locatorCode;
 
-	@ValidMoment(past = true)
+	@Temporal(TemporalType.TIMESTAMP)
 	@Mandatory
-	@Automapped
+	@ValidMoment(past = true)
 	private Date				purchaseMoment;
 
 	@Enumerated(EnumType.STRING)
@@ -50,7 +52,7 @@ public class Booking extends AbstractEntity {
 	@ValidString(pattern = "^\\d{4}$")
 	@Optional
 	@Automapped
-	private String				lastNibble;
+	private String				lastCardNibble;
 
 	@ManyToOne
 	@Mandatory
