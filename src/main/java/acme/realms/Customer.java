@@ -27,7 +27,7 @@ public class Customer extends AbstractRole {
 
 	@ValidString(pattern = "^'\'+?'\'d{6,15}$")
 	@Mandatory
-	@Automapped
+	@Column(unique = true)
 	private String				phoneNumber;
 
 	@ValidString
