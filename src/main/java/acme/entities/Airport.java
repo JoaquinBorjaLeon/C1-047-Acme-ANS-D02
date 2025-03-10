@@ -3,10 +3,11 @@ package acme.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.validation.Valid;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
 
 import acme.client.components.basis.AbstractEntity;
+import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidString;
@@ -23,7 +24,8 @@ public class Airport extends AbstractEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	@Mandatory
-	@Size(max = 50)
+	@ValidString(max = 50)
+	@Automapped
 	private String				name;
 
 	@Mandatory
@@ -32,25 +34,33 @@ public class Airport extends AbstractEntity {
 	private String				iataCode;
 
 	@Mandatory
-	@ValidString(pattern = "^(INTERNATIONAL|DOMESTIC|REGIONAL)$")
-	private String				operationalScope;
+	@Valid
+	@Automapped
+	private AirportType			operationalScope;
 
 	@Mandatory
-	@Size(max = 50)
+	@ValidString(max = 50)
+	@Automapped
 	private String				city;
 
 	@Mandatory
-	@Size(max = 50)
+	@ValidString(max = 50)
+	@Automapped
 	private String				country;
 
 	@Optional
+	@ValidString
+	@Automapped
 	private String				website;
 
 	@Optional
 	@Pattern(regexp = "^.+@.+\\..+$")
+	@Automapped
 	private String				email;
 
 	@Optional
-	@Pattern(regexp = "^\\+?\\d{6,15}$")
+	@ValidString(pattern = "^+?\\d{6,15}$")
+	@Automapped
 	private String				contactPhone;
+
 }
