@@ -31,7 +31,7 @@ public class Review extends AbstractEntity {
 	private String				alias;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@ValidMoment(past = true)
+	@ValidMoment(min = "2000/01/01  00:00:00", past = true)
 	@Mandatory
 	private Date				postedMoment;
 
