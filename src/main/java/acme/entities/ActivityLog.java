@@ -3,8 +3,8 @@ package acme.entities;
 
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -24,21 +24,21 @@ public class ActivityLog {
 
 	@Mandatory
 	@Valid
-	@Column(unique = true)
-	private FlightCrewMember	reporter;
+	@ManyToOne(optional = false)
+	private FlightAssignment	flightAssignment;
 
 	@Mandatory
 	@Temporal(TemporalType.TIMESTAMP)
-	@ValidMoment(past = true)
+	@ValidMoment(max = "2100/01/01 00:00:00", past = true)
 	private Date				registrationMoment;
 
 	@Mandatory
-	@ValidString(max = 50)
+	@ValidString(min = 1, max = 50)
 	@Automapped
 	private String				incidentType;
 
 	@Mandatory
-	@ValidString(max = 255)
+	@ValidString(min = 1, max = 255)
 	@Automapped
 	private String				incidentDescription;
 
