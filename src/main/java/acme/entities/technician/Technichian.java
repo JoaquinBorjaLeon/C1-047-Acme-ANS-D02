@@ -3,8 +3,9 @@ package acme.entities.technician;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.validation.Valid;
 
-import acme.client.components.basis.AbstractEntity;
+import acme.client.components.basis.AbstractRole;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidNumber;
@@ -15,32 +16,33 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Technichian extends AbstractEntity {
+public class Technichian extends AbstractRole {
 
 	private static final long serialVersionUID = 1L;
 
-	@ValidString(pattern = "^[A-Z]{2-3}[0-9]{6}$")
+
 	@Mandatory
+	@ValidString(pattern = "^[A-Z]{2-3}[0-9]{6}$")
 	@Column(unique = true)
 	private String licenseNumber;
-	
-	@ValidString(pattern = "^[+]?[0-9]{6,15}$")
+
 	@Mandatory
+	@ValidString(pattern = "^[+]?[0-9]{6,15}$")
 	@Automapped
 	private String phoneNumber;
 
-	@ValidString(max = 50)
 	@Mandatory
+	@ValidString(max = 50)
 	@Automapped
 	private String specialisation;
 
 	@Mandatory
+	@Valid
 	@Column(name = "passedHealthTest")
-	@Automapped
 	private Boolean hasPassedAnnualHealthTest;
 
-	@ValidNumber(min=0)
 	@Mandatory
+	@ValidNumber(min=0, max=65)
 	@Automapped
 	private Integer yearsOfExperience;
 
