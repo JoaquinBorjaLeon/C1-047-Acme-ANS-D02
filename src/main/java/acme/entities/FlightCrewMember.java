@@ -5,11 +5,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 import javax.validation.Valid;
 
-import acme.client.components.basis.AbstractEntity;
+import acme.client.components.basis.AbstractRole;
 import acme.client.components.datatypes.Money;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
@@ -21,20 +19,19 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Getter
 @Setter
-public class FlightCrewMember extends AbstractEntity {
+public class FlightCrewMember extends AbstractRole {
 
 	private static final long	serialVersionUID	= 1L;
 
 	@Mandatory
 	@ValidString(pattern = "^[A-Z]{2-3}\\d{6}$")
 	@Column(unique = true)
-	private String				employerCode;
+	private String				employeeCode;
 
 	@Mandatory
-	@ValidString(pattern = "^\\+?\\d{6,15}$")
+	@ValidString(pattern = "^+?/d{6,15}$")
 	@Column(unique = true)
 	private String				phoneNumber;
 
@@ -51,22 +48,21 @@ public class FlightCrewMember extends AbstractEntity {
 
 	@Mandatory
 	@Valid
-	@Automapped
 	@Enumerated(EnumType.STRING)
 	private Availability	availabilityStatus;
 
-	@Mandatory
-	@ValidString
-	@Automapped
-	private String			airline;
+	//	@Mandatory
+	//	@ValidString
+	//	@ManyToOne(optional = false)
+	//	private String			airline;
 
 	@Mandatory
-	@ValidMoney
+	@ValidMoney(min = 0, max = 1000000)
 	@Automapped
 	private Money			salary;
 
 	@Optional
-	@ValidNumber
+	@ValidNumber(min = 0, max = 150)
 	@Automapped
 	private Integer			yearsOfExperience;
 
