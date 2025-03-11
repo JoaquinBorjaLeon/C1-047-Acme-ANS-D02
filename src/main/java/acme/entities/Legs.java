@@ -11,6 +11,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import acme.client.components.basis.AbstractEntity;
+import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.constraints.ValidFlightNumber;
 import lombok.EqualsAndHashCode;
@@ -39,12 +40,15 @@ public class Legs extends AbstractEntity {
 	private Date				scheduledArrival;
 
 	@Mandatory
+	@Automapped
 	private String				departureAirport;
 
 	@Mandatory
+	@Automapped
 	private String				arrivalAirport;
 
 	@Mandatory
+	@Automapped
 	private Double				duration;
 
 	@Mandatory
@@ -58,4 +62,5 @@ public class Legs extends AbstractEntity {
 	public enum Status {
 		ON_TIME, DELAYED, CANCELLED, LANDED;
 	}
+
 }
