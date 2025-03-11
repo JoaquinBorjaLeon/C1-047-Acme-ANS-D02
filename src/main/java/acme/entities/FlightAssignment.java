@@ -4,8 +4,6 @@ package acme.entities;
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -30,39 +28,30 @@ public class FlightAssignment extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
+	private Leg					leg;
+
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
 	private FlightCrewMember	allocatedFlightCrewMember;
 
-
-	private enum Duty {
-		PILOT, CO_PILOT, LEAD_ATTENDANT, CABIN_ATTENDANT
-	}
-
-
 	@Mandatory
 	@Valid
 	@Automapped
-	@Enumerated(EnumType.STRING)
-	private Duty	duty;
+	private Duty				duty;
 
 	@Mandatory
-	@ValidMoment(past = true)
+	@ValidMoment(min = "2000/01/01 00:00:00", past = true)
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date	momentLastUpdate;
-
-
-	private enum Status {
-		CONFIRMED, PENDING, CANCELLED
-	}
-
+	private Date				momentLastUpdate;
 
 	@Mandatory
 	@Valid
 	@Automapped
-	@Enumerated(EnumType.STRING)
-	private Status	currentStatus;
+	private Status				currentStatus;
 
 	@Optional
-	@ValidString(max = 255)
+	@ValidString(min = 0, max = 255)
 	@Automapped
-	private String	remarks;
+	private String				remarks;
 }
