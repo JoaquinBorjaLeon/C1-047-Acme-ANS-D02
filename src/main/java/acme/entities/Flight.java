@@ -11,6 +11,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
 import acme.client.components.basis.AbstractEntity;
+import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import lombok.EqualsAndHashCode;
@@ -27,13 +28,16 @@ public class Flight extends AbstractEntity {
 
 	@Mandatory
 	@Size(max = 50)
+	@Automapped
 	private String				tag;
 
 	@Mandatory
+	@Automapped
 	private Boolean				requiresSelfTransfer;
 
 	@Mandatory
 	@Min(0)
+	@Automapped
 	private Integer				cost;
 
 	@Optional
@@ -42,27 +46,38 @@ public class Flight extends AbstractEntity {
 
 	@OneToMany(mappedBy = "flight")
 	@Valid
+	@Automapped
 	private List<Legs>			legs;
 
 
 	public Date getScheduledDeparture() {
-		return this.legs != null && !this.legs.isEmpty() ? this.legs.get(0).getScheduledDeparture() : null;
+		if (!this.legs.isEmpty())
+			return this.legs.get(0).getScheduledDeparture();
+		return null;
 	}
 
 	public Date getScheduledArrival() {
-		return this.legs != null && !this.legs.isEmpty() ? this.legs.get(this.legs.size() - 1).getScheduledArrival() : null;
+		if (!this.legs.isEmpty())
+			return this.legs.get(this.legs.size() - 1).getScheduledArrival();
+		return null;
 	}
 
 	public String getOriginCity() {
-		return this.legs != null && !this.legs.isEmpty() ? this.legs.get(0).getDepartureAirport() : null;
+		if (this.legs != null && !this.legs.isEmpty())
+			return this.legs.get(0).getDepartureAirport();
+		return null;
 	}
 
 	public String getDestinationCity() {
-		return this.legs != null && !this.legs.isEmpty() ? this.legs.get(this.legs.size() - 1).getArrivalAirport() : null;
+		if (this.legs != null && !this.legs.isEmpty())
+			return this.legs.get(this.legs.size() - 1).getArrivalAirport();
+		return null;
 	}
 
 	public Integer getLayovers() {
-		return this.legs != null && this.legs.size() > 1 ? this.legs.size() - 2 : 0;
+		if (this.legs != null && this.legs.size() > 1)
+			return this.legs.size() - 2;
+		return 0;
 	}
 
 }
