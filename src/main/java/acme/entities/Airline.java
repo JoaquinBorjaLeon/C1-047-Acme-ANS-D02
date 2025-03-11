@@ -5,8 +5,6 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -30,12 +28,12 @@ public class Airline extends AbstractEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	@Mandatory
-	@ValidString(max = 50)
+	@ValidString(min = 1, max = 50)
 	@Automapped
 	private String				name;
 
 	@Mandatory
-	@ValidString(pattern = "^[A-Z]{3}$")
+	@ValidString(min = 3, max = 3, pattern = "^[A-Z]{3}$")
 	@Column(unique = true)
 	private String				iataCode;
 
@@ -44,29 +42,23 @@ public class Airline extends AbstractEntity {
 	@Automapped
 	private String				websiteUrl;
 
-
-	private enum Status {
-		LUXURY, STANDARD, LOW_COST
-	}
-
-
 	@Mandatory
 	@Valid
-	@Enumerated(EnumType.STRING)
-	private Status	type;
+	@Automapped
+	private AirlineStatus		type;
 
 	@Mandatory
-	@ValidMoment(past = true)
+	@ValidMoment(min = "2000/01/01 00:00:00", past = true)
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date	foundationMoment;
+	private Date				foundationMoment;
 
 	@Optional
 	@ValidEmail
 	@Automapped
-	private String	email;
+	private String				email;
 
 	@Optional
 	@ValidString(pattern = "^\\+?\\d{6,15}$")
 	@Automapped
-	private String	phoneNumber;
+	private String				phoneNumber;
 }
