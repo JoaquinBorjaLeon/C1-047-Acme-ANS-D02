@@ -6,6 +6,9 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
@@ -24,33 +27,34 @@ public class Passenger extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
-	@ValidString
 	@Mandatory
+	@ValidString(min = 1, max = 255)
 	@Automapped
 	private String				fullName;
 
-	@ValidEmail
 	@Mandatory
+	@ValidEmail
 	@Column(unique = true)
 	private String				email;
 
-	@ValidString(pattern = "^[A-Z0-9]{6,9}$")
+	@ValidString(min = 6, max = 9, pattern = "^[A-Z0-9]{6,9}$")
 	@Mandatory
 	@Column(unique = true)
 	private String				passport;
 
-	@ValidMoment(past = true)
 	@Mandatory
-	@Automapped
+	@ValidMoment(min = "1900/01/01 00:00:00", past = true)
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date				birthDate;
 
-	@ValidString(max = 50)
 	@Optional
+	@ValidString(min = 0, max = 50)
 	@Automapped
 	private String				specialNeeds;
 
-	@ManyToOne
 	@Mandatory
-	@Automapped
+	@Valid
+	@ManyToOne(optional = false)
 	private Booking				booking;
+
 }
