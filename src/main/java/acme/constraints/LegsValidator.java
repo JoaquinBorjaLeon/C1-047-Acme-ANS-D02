@@ -17,8 +17,7 @@ public class LegsValidator extends AbstractValidator<ValidLegs, Legs> {
 
 	@Override
 	public boolean isValid(final Legs leg, final ConstraintValidatorContext context) {
-		if (context == null)
-			throw new IllegalArgumentException("ConstraintValidatorContext cannot be null");
+		assert context != null;
 
 		boolean result;
 
