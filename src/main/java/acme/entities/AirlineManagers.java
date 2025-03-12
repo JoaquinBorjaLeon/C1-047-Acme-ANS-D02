@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 
 import acme.client.components.basis.AbstractRole;
@@ -15,6 +16,8 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidString;
+import acme.client.components.validation.ValidUrl;
+import acme.constraints.ValidIdentifierNumber;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,6 +25,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@ValidIdentifierNumber
 @EqualsAndHashCode(callSuper = true)
 public class AirlineManagers extends AbstractRole {
 
@@ -34,6 +38,7 @@ public class AirlineManagers extends AbstractRole {
 
 	@Mandatory
 	@Min(0)
+	@Max(120)
 	@Automapped
 	private Integer				experience;
 
@@ -44,6 +49,7 @@ public class AirlineManagers extends AbstractRole {
 
 	@Optional
 	@Automapped
+	@ValidUrl
 	private String				linkPicture;
 
 }
