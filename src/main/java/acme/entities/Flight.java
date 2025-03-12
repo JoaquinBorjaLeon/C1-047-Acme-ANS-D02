@@ -66,18 +66,18 @@ public class Flight extends AbstractEntity {
 	@Transient
 	public Date getFlightArrival() {
 		FlightRepository repository = SpringHelper.getBean(FlightRepository.class);
-		List<Legs> listOfLegss = repository.legsByFlightId(this.getId());
+		List<Legs> listOfLegs = repository.legsByFlightId(this.getId());
 		Date scheduledArrival = null;
-		if (!listOfLegss.isEmpty())
-			scheduledArrival = listOfLegss.get(listOfLegss.size() - 1).getScheduledArrival();
+		if (!listOfLegs.isEmpty())
+			scheduledArrival = listOfLegs.get(listOfLegs.size() - 1).getScheduledArrival();
 		return scheduledArrival;
 	}
 
 	@Transient
 	public Integer getLayovers() {
 		FlightRepository repository = SpringHelper.getBean(FlightRepository.class);
-		List<Legs> listOfLegss = repository.legsByFlightId(this.getId());
-		return listOfLegss.size() - 1;
+		List<Legs> listOfLegs = repository.legsByFlightId(this.getId());
+		return listOfLegs.size() - 2;
 	}
 
 	@Transient
