@@ -8,13 +8,14 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.validation.Valid;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
 import acme.client.components.basis.AbstractEntity;
+import acme.client.components.datatypes.Money;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
+import acme.client.components.validation.ValidMoney;
 import acme.client.helpers.SpringHelper;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -39,9 +40,9 @@ public class Flight extends AbstractEntity {
 	private Boolean				requiresSelfTransfer;
 
 	@Mandatory
-	@Min(0)
+	@ValidMoney(min = 0)
 	@Automapped
-	private Integer				cost;
+	private Money				cost;
 
 	@Optional
 	@Size(max = 255)
