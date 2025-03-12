@@ -1,6 +1,6 @@
 
 package acme.entities;
 
-public enum Status {
+public enum AssigmentStatus {
 	CONFIRMED, PENDING, CANCELLED
 }

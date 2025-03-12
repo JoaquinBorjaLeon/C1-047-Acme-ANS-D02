@@ -38,7 +38,7 @@ public class FlightAssignment extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@Automapped
-	private Duty				duty;
+	private CrewsDuty				duty;
 
 	@Mandatory
 	@ValidMoment(min = "2000/01/01 00:00:00", past = true)
@@ -48,7 +48,7 @@ public class FlightAssignment extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@Automapped
-	private Status				currentStatus;
+	private AssigmentStatus		currentStatus;
 
 	@Optional
 	@ValidString(min = 0, max = 255)
