@@ -4,6 +4,7 @@ package acme.entities.assistanceagent;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -31,7 +32,7 @@ public class Claim extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidMoment(past = true)
+	@ValidMoment(min = "2000/01/01 00:00:00", past = true)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				registrationMoment;
 
@@ -41,7 +42,7 @@ public class Claim extends AbstractEntity {
 	private String				passengerEmail;
 
 	@Mandatory
-	@ValidString(max = 255)
+	@ValidString(min = 1, max = 255)
 	@Automapped
 	private String				description;
 
@@ -58,9 +59,14 @@ public class Claim extends AbstractEntity {
 
 	// Relationships ----------------------------------------------------------
 
-	// @Mandatory
-	// @Valid
-	// @ManyToOne(optional = false)
-	// private AssistanceAgent	assistanceAgent;
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private AssistanceAgent		assistanceAgent;
+
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private Leg					leg;
 
 }
