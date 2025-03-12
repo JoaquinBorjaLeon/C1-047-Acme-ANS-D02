@@ -25,12 +25,12 @@ public class Airport extends AbstractEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	@Mandatory
-	@ValidString(max = 50)
+	@ValidString(min = 1, max = 50)
 	@Automapped
 	private String				name;
 
 	@Mandatory
-	@ValidString(pattern = "^[A-Z]{3}$")
+	@ValidString(pattern = "^[A-Z]{3}$", min = 3, max = 3)
 	@Column(unique = true)
 	private String				iataCode;
 
@@ -40,12 +40,12 @@ public class Airport extends AbstractEntity {
 	private AirportType			operationalScope;
 
 	@Mandatory
-	@ValidString(max = 50)
+	@ValidString(min = 1, max = 50)
 	@Automapped
 	private String				city;
 
 	@Mandatory
-	@ValidString(max = 50)
+	@ValidString(min = 1, max = 50)
 	@Automapped
 	private String				country;
 
