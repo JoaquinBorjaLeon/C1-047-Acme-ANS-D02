@@ -1,0 +1,1 @@
+acme.validation.review.missing-relation.message=Invalid review. At least one of serviceReviewed, airlineReviewed, airportReviewed, or flightReviewed must be present.

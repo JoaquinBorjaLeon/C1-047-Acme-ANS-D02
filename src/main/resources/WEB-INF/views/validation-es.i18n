@@ -1,0 +1,1 @@
+acme.validation.review.missing-relation.message=Reseña no válida. Debe estar presente al menos uno de los siguientes: serviceReviewed, airlineReviewed, airportReviewed o flightReviewed.
