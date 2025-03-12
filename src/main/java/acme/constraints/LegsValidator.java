@@ -31,7 +31,7 @@ public class LegsValidator extends AbstractValidator<ValidLegs, Legs> {
 				String airlineIataCode = leg.getAircraft().getAirline().getIataCode();
 				correctCode = leg.getFlightNumber().substring(0, 3).equalsIgnoreCase(airlineIataCode);
 
-			} catch (Error e) {
+			} catch (Exception e) {
 				correctCode = false;
 			}
 
