@@ -1,15 +1,14 @@
 
-package acme.entities;
+package acme.entities.booking;
 
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.datatypes.Money;
@@ -29,43 +28,39 @@ public class Booking extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
-	@ValidString(pattern = "^[A-Z0-9]{6,8}$")
 	@Mandatory
+	@ValidString(min = 6, max = 9, pattern = "^[A-Z0-9]{6,8}$")
 	@Column(unique = true)
 	private String				locatorCode;
 
-	@Temporal(TemporalType.TIMESTAMP)
 	@Mandatory
-	@ValidMoment(past = true)
+	@ValidMoment(min = "2000/01/01 00:00:00", past = true)
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date				purchaseMoment;
 
-	@Enumerated(EnumType.STRING)
 	@Mandatory
+	@Valid
 	@Automapped
 	private TravelClass			travelClass;
 
-	@ValidMoney
 	@Mandatory
+	@ValidMoney(min = 0, max = 100000)
 	@Automapped
 	private Money				price;
 
-	@ValidString(pattern = "^\\d{4}$")
 	@Optional
+	@ValidString(min = 4, max = 4, pattern = "^\\d{4}$")
 	@Automapped
 	private String				lastCardNibble;
 
-	@ManyToOne
 	@Mandatory
-	@Automapped
+	@Valid
+	@ManyToOne(optional = false)
 	private Customer			customer;
 
-	@ManyToOne
 	@Mandatory
-	@Automapped
+	@Valid
+	@ManyToOne(optional = false)
 	private Flight				flight;
 
-
-	public enum TravelClass {
-		ECONOMY, BUSINESS
-	}
 }
