@@ -27,12 +27,12 @@ public class FlightCrewMember extends AbstractRole {
 	private static final long	serialVersionUID	= 1L;
 
 	@Mandatory
-	@ValidString(min = 8, max = 9, pattern = "^[A-Z]{2-3}\\d{6}$")
+	@ValidString(min = 8, max = 9, pattern = "^[A-Z]{2,3}\\d{6}$")
 	@Column(unique = true)
 	private String				employeeCode;
 
 	@Mandatory
-	@ValidString(min = 6, max = 16, pattern = "^+?/d{6,15}$")
+	@ValidString(min = 6, max = 16, pattern = "^\+?\d{6,15}$")
 	@Column(unique = true)
 	private String				phoneNumber;
 
@@ -47,9 +47,9 @@ public class FlightCrewMember extends AbstractRole {
 	private AvailabilityStatus	availabilityStatus;
 
 	@Mandatory
-	@ValidString
+	@Valid
 	@ManyToOne(optional = false)
-	private String				airline;
+	private Airline				airline;
 
 	@Mandatory
 	@ValidMoney(min = 0, max = 1000000)
