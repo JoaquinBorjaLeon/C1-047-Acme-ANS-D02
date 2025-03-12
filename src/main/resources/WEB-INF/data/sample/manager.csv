@@ -1,0 +1,4 @@
+key,key:userAccount,managerCode,yearsExperience,birthDay,pictureLink,key:airline
+manager-01,user-account-manager-01,CC311937,20,1999/05/05 07:07,http://example.org?a=1,airline-01
+manager-02,user-account-manager-02,HG222847,10,1999/06/06 08:08,http://example.org,airline-02
+manager-03,user-account-manager-03,AE412852,1,1999/07/07 09:09,http://example.org?b=2,airline-03
