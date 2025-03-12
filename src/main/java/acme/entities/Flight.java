@@ -51,7 +51,7 @@ public class Flight extends AbstractEntity {
 	@OneToMany(mappedBy = "flight")
 	@Valid
 	@Automapped
-	private List<Legs>			Legs;
+	private List<Legs>			legs;
 
 
 	@Transient
