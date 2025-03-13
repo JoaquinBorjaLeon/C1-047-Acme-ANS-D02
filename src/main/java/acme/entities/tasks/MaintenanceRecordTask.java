@@ -13,15 +13,15 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class AircraftTask extends AbstractEntity {
+public class MaintenanceRecordTask extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
-//	TO-DO: uncomment this when/if Aircraft class is accepted
+//	TO-DO: uncomment this when/if MaintenanceRecord class is accepted
 //	@ManyToOne
 //	@Mandatory
 //	@Automapped
-//	private Aircraft aircraft;
+//	private MaintenanceRecord MaintenanceRecord;
 	
 	@ManyToOne
 	@Mandatory
