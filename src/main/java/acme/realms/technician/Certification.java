@@ -3,6 +3,7 @@ package acme.realms.technician;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
@@ -18,14 +19,14 @@ public class Certification extends AbstractEntity {
 
 	private static final long serialVersionUID = 1L;
 
-	@ValidString(max = 255)
 	@Mandatory
+	@ValidString(max = 255)
 	@Automapped
 	private String certification;
 	
-	@ManyToOne
 	@Mandatory
-	@Automapped
+	@Valid
+	@ManyToOne
 	private Technician technician;
 
 }
