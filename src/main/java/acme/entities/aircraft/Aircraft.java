@@ -1,11 +1,12 @@
 
-package acme.entities;
+package acme.entities.aircraft;
 
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
@@ -22,38 +23,34 @@ import lombok.Setter;
 public class Aircraft extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
-	
-	@ValidString(max = 50)
+
 	@Mandatory
+	@ValidString(min=1, max = 50)
 	@Automapped
 	private String model;
-	
-	@ValidString(max = 50)
+
 	@Mandatory
+	@ValidString(min=1, max = 50)
 	@Column(unique = true)
 	private String regNumber;
 
-	@ValidNumber(min=0)
 	@Mandatory
+	@ValidNumber(min=0, max = 50000)
 	@Automapped
 	private Integer capacity;
-	
-	@ValidNumber(min=2000, max=50000)
+
 	@Mandatory
+	@ValidNumber(min=2000, max=50000)
 	@Automapped
 	private Double cargoWeight;
 
-	@Enumerated(EnumType.STRING)
 	@Mandatory
+	@Valid
 	@Automapped
-	private Status status;
+	private AircraftStatus status;
 
-	@ValidString(max = 255)
 	@Optional
+	@ValidString(max = 255)
 	@Automapped
 	private String notes;
-
-	public enum Status {
-		IN_SERVICE, UNDER_MAINTENANCE
-	}
 }
