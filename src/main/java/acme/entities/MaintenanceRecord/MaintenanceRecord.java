@@ -52,16 +52,14 @@ public class MaintenanceRecord extends AbstractEntity {
 	@Automapped
 	private String notes;
 
-//	TO-DO: link with aircraft when aircraft is accepted
-//	@ManyToOne
-//	@Mandatory
-//	@Automapped
-//	private Aircraft aircraft;
+	@ManyToOne
+	@Mandatory
+	@Automapped
+	private Aircraft aircraft;
 	
-//	TO-DO: link with technician when technician is accepted
-//	@ManyToOne
-//	@Mandatory
-//	@Automapped
-//	private Technician technician;
+	@ManyToOne
+	@Mandatory
+	@Automapped
+	private Technician technician;
 
 }
