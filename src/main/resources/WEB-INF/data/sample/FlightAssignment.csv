@@ -1,5 +1,0 @@
-key,current_status,duty,moment_last_update,remarks,key:flight_crew_member
-assignment-01,CONFIRMED,PILOT,2010/03/03 10:00,"mensaje1",member-01
-assignment-02,CONFIRMED,CO_PILOT,2010/02/16 12:45,"mensaje2",member-02
-assignment-03,PENDING,LEAD_ATTENDANT,2010/02/10 01:00,"mensaje3",member-03
-assignment-04,CANCELLED,CABIN_ATTENDANT,2010/01/06 15:15,"mensaje4",member-04
