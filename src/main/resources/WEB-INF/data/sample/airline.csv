@@ -1,2 +1,8 @@
-key,name,iataCode,websiteUrl,type,foundationMoment,email,phoneNumber
-airline-01,Airline1,ABC,http://lorem.com/ipsum,LUXURY,2020/02/02 00:00,acme@lorem-ipsum.org,+34657463263
+key,email,foundation_moment,iata_code,name,phone_number,type,website_url
+airline-01,airline1@gmail.com,2002/02/01 10:00,ABX,Ry4n4ir,123456,LOW_COST,https://www.fakeweb1.com
+airline-02,acme@lorem-ipsum.org,2002/02/01 10:00,ACX,Nombre1,123456,STANDARD,https://www.fakeweb2.com
+airline-03,a@b.e,2002/02/01 10:00,AEX,Nombre3,123456,LUXURY,https://www.fakeweb4.com
+airline-04,a@b.es,2002/02/01 10:00,AFX,Nombre4,123456,LUXURY,https://www.fakeweb5.com
+airline-05,a@b.esx,2002/02/01 10:00,AGX,Nombre5,123456,LUXURY,https://www.fakeweb6.com
+airline-06,marblaper@gmail.com,2020/08/05 0:00,CLX,Airline6,123456,LUXURY,https://www.skywings.com
+airline-07,matblaper@gmail.com,2020/06/05 0:00,COX,Airline7,123456,LUXURY,https://www.clau.com
