@@ -1,5 +1,5 @@
 
-package acme.entities.FlightCrewMember;
+package acme.realms.FlightCrewMember;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -32,7 +32,7 @@ public class FlightCrewMember extends AbstractRole {
 	private String				employeeCode;
 
 	@Mandatory
-	@ValidString(min = 6, max = 16, pattern = "^\+?\d{6,15}$")
+	@ValidString(min = 6, max = 16, pattern = "^\\+?\\d{6,15}$")
 	@Column(unique = true)
 	private String				phoneNumber;
 
