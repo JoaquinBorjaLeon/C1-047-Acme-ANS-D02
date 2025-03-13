@@ -1,5 +1,5 @@
 
-package acme.entities;
+package acme.entities.FlightCrewMember;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,7 +14,7 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
-import acme.constraints.ValidFlightCrewMember;
+import acme.constraints.FlightCrewMember.ValidFlightCrewMember;
 import lombok.Getter;
 import lombok.Setter;
 
