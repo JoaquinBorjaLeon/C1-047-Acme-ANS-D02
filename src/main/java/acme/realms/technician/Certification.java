@@ -26,6 +26,6 @@ public class Certification extends AbstractEntity {
 	@ManyToOne
 	@Mandatory
 	@Automapped
-	private Technichian technician;
+	private Technician technician;
 
 }
