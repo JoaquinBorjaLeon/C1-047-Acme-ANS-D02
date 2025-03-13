@@ -19,7 +19,7 @@ import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
 import acme.client.components.validation.ValidUrl;
 import acme.constraints.ValidAssistanceAgent;
-import acme.entities.Airline;
+import acme.entities.Airline.Airline;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;

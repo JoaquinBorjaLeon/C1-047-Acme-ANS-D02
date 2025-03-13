@@ -16,23 +16,23 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Technichian extends AbstractRole {
+public class Technician extends AbstractRole {
 
 	private static final long serialVersionUID = 1L;
 
 
 	@Mandatory
-	@ValidString(pattern = "^[A-Z]{2-3}[0-9]{6}$")
+	@ValidString(min=8, max=9, pattern = "^[A-Z]{2,3}[0-9]{6}$")
 	@Column(unique = true)
 	private String licenseNumber;
 
 	@Mandatory
-	@ValidString(pattern = "^[+]?[0-9]{6,15}$")
+	@ValidString(min=6, max=16, pattern = "^[+]?[0-9]{6,15}$")
 	@Automapped
 	private String phoneNumber;
 
 	@Mandatory
-	@ValidString(max = 50)
+	@ValidString(min=1, max = 50)
 	@Automapped
 	private String specialisation;
 

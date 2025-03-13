@@ -17,6 +17,7 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoney;
 import acme.client.helpers.SpringHelper;
+import acme.entities.airport.Airport;
 import acme.entities.legs.Legs;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
