@@ -27,6 +27,11 @@ import lombok.Setter;
 public class Airline extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
+	
+	@Mandatory
+	@ValidString(pattern = "^[A-Z]{3}$", min = 3, max = 3)
+	@Column(unique = true)
+	private String				iataCode;
 
 	@Mandatory
 	@ValidString(min = 1, max = 255)
