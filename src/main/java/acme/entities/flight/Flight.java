@@ -51,11 +51,6 @@ public class Flight extends AbstractEntity {
 	@Automapped
 	private String				description;
 
-	@OneToMany(mappedBy = "flight")
-	@Valid
-	@Automapped
-	private List<Legs>			legs;
-
 
 	@Transient
 	public Date getFlightDeparture() {

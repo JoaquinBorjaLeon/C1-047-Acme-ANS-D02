@@ -5,6 +5,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -17,7 +18,7 @@ import acme.constraints.ValidFlightNumber;
 import acme.constraints.ValidLegs;
 import acme.entities.aircraft.Aircraft;
 import acme.entities.airport.Airport;
-import lombok.EqualsAndHashCode;
+import acme.entities.flight.Flight;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,7 +26,6 @@ import lombok.Setter;
 @Getter
 @Setter
 @ValidLegs
-@EqualsAndHashCode(callSuper = true)
 public class Legs extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
@@ -67,7 +67,12 @@ public class Legs extends AbstractEntity {
 
 	@Mandatory
 	@Valid
-	@Automapped
+	@ManyToOne
 	private Aircraft			aircraft;
+	
+	@Mandatory
+	@Valid
+	@ManyToOne
+	private Flight flight;
 
 }
