@@ -26,7 +26,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @ValidLegs
-public class Legs extends AbstractEntity {
+public class Leg extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
 

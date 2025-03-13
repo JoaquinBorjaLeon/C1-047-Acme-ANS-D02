@@ -18,7 +18,7 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoney;
 import acme.client.helpers.SpringHelper;
 import acme.entities.airport.Airport;
-import acme.entities.legs.Legs;
+import acme.entities.legs.Leg;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -56,15 +56,15 @@ public class Flight extends AbstractEntity {
 	public Date getFlightDeparture() {
 		FlightRepository repository = SpringHelper.getBean(FlightRepository.class);
 
-		List<Legs> listOfLegs = repository.legsByFlightId(this.getId());
-		Legs firstLegs = listOfLegs.stream().findFirst().orElse(null);
+		List<Leg> listOfLegs = repository.legsByFlightId(this.getId());
+		Leg firstLegs = listOfLegs.stream().findFirst().orElse(null);
 		return firstLegs != null ? firstLegs.getScheduledDeparture() : null;
 	}
 
 	@Transient
 	public Date getFlightArrival() {
 		FlightRepository repository = SpringHelper.getBean(FlightRepository.class);
-		List<Legs> listOfLegs = repository.legsByFlightId(this.getId());
+		List<Leg> listOfLegs = repository.legsByFlightId(this.getId());
 		Date scheduledArrival = null;
 		if (!listOfLegs.isEmpty())
 			scheduledArrival = listOfLegs.get(listOfLegs.size() - 1).getScheduledArrival();
@@ -74,22 +74,22 @@ public class Flight extends AbstractEntity {
 	@Transient
 	public Integer getLayovers() {
 		FlightRepository repository = SpringHelper.getBean(FlightRepository.class);
-		List<Legs> listOfLegs = repository.legsByFlightId(this.getId());
+		List<Leg> listOfLegs = repository.legsByFlightId(this.getId());
 		return listOfLegs.size() - 2;
 	}
 
 	@Transient
 	public Airport getDeparture() {
 		FlightRepository repository = SpringHelper.getBean(FlightRepository.class);
-		List<Legs> listOfLegs = repository.legsByFlightId(this.getId());
-		Legs firstLegs = listOfLegs.stream().findFirst().orElse(null);
+		List<Leg> listOfLegs = repository.legsByFlightId(this.getId());
+		Leg firstLegs = listOfLegs.stream().findFirst().orElse(null);
 		return firstLegs != null ? firstLegs.getDepartureAirport() : null;
 	}
 
 	@Transient
 	public Airport getArrival() {
 		FlightRepository repository = SpringHelper.getBean(FlightRepository.class);
-		List<Legs> listOfLegs = repository.legsByFlightId(this.getId());
+		List<Leg> listOfLegs = repository.legsByFlightId(this.getId());
 		Airport destination = null;
 		if (!listOfLegs.isEmpty())
 			destination = listOfLegs.get(listOfLegs.size() - 1).getArrivalAirport();
