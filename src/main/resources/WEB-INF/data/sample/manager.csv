@@ -1,0 +1,21 @@
+key,key:userAccount,managerCode,yearsExperience,birthDay,pictureLink,key:airline
+manager-01,user-account-manager-01,CC311937,20,1999/05/05 07:07,http://example.org?a=1,airline-01
+manager-02,user-account-manager-02,HG222847,10,1999/06/06 08:08,http://example.org,airline-02
+manager-03,user-account-manager-03,AE412852,1,1999/07/07 09:09,http://example.org?b=2,airline-03
+manager-04,user-account-manager-04,XD112334,5,2000/01/01 10:10,http://example.org?c=3,airline-04
+manager-05,user-account-manager-05,TY983247,12,2001/02/02 11:11,http://example.org?d=4,airline-05
+manager-06,user-account-manager-06,BQ223355,15,2002/03/03 12:12,http://example.org?e=5,airline-06
+manager-07,user-account-manager-07,MK445678,8,2003/04/04 13:13,http://example.org?f=6,airline-07
+manager-08,user-account-manager-08,ZN556789,3,2004/05/05 14:14,http://example.org?g=7,airline-08
+manager-09,user-account-manager-09,PL667890,18,2005/06/06 15:15,http://example.org?h=8,airline-09
+manager-10,user-account-manager-10,RT778901,22,2006/07/07 16:16,http://example.org?i=9,airline-10
+manager-11,user-account-manager-11,UI889012,7,2007/08/08 17:17,http://example.org?j=10,airline-11
+manager-12,user-account-manager-12,OP990123,13,2008/09/09 18:18,http://example.org?k=11,airline-12
+manager-13,user-account-manager-13,WE101234,6,2009/10/10 19:19,http://example.org?l=12,airline-13
+manager-14,user-account-manager-14,AS212345,4,2010/11/11 20:20,http://example.org?m=13,airline-14
+manager-15,user-account-manager-15,QW323456,9,2011/12/12 21:21,http://example.org?n=14,airline-15
+manager-16,user-account-manager-16,ER434567,14,2012/01/01 22:22,http://example.org?o=15,airline-16
+manager-17,user-account-manager-17,DF545678,11,2013/02/02 23:23,http://example.org?p=16,airline-17
+manager-18,user-account-manager-18,GJ656789,19,2014/03/03 00:00,http://example.org?q=17,airline-18
+manager-19,user-account-manager-19,KL767890,2,2015/04/04 01:01,http://example.org?r=18,airline-19
+manager-20,user-account-manager-20,ZM878901,16,2016/05/05 02:02,http://example.org?s=19,airline-20
