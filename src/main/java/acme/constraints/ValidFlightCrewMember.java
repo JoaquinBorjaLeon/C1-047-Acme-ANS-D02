@@ -1,5 +1,5 @@
 
-package acme.constraints.FlightCrewMember;
+package acme.constraints;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

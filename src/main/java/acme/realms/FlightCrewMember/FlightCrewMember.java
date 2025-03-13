@@ -14,7 +14,7 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
-import acme.constraints.FlightCrewMember.ValidFlightCrewMember;
+import acme.constraints.ValidFlightCrewMember;
 import lombok.Getter;
 import lombok.Setter;
 

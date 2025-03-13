@@ -1,5 +1,5 @@
 
-package acme.constraints.FlightCrewMember;
+package acme.constraints;
 
 import javax.validation.ConstraintValidatorContext;
 
