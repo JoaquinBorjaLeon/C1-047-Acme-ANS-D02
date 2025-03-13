@@ -1,5 +1,5 @@
 
-package acme.entities;
+package acme.entities.flight;
 
 import java.util.List;
 
@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
+import acme.entities.legs.Legs;
 
 @Repository
 public interface FlightRepository extends AbstractRepository {

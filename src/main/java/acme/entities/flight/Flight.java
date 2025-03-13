@@ -1,5 +1,5 @@
 
-package acme.entities;
+package acme.entities.flight;
 
 import java.beans.Transient;
 import java.util.Date;
@@ -17,6 +17,7 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoney;
 import acme.client.helpers.SpringHelper;
+import acme.entities.legs.Legs;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
