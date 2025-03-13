@@ -9,6 +9,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
 
+import acme.client.components.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidMoment;
@@ -21,7 +22,9 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class ActivityLog {
+public class ActivityLog extends AbstractEntity {
+
+	private static final long	serialVersionUID	= 1L;
 
 	@Mandatory
 	@Valid
