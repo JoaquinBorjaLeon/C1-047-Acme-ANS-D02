@@ -1,4 +1,4 @@
-
+//
 package acme.entities.FlightCrewMember;
 
 import javax.persistence.Column;
