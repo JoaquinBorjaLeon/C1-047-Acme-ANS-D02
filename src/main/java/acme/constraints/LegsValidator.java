@@ -8,7 +8,7 @@ import javax.validation.ConstraintValidatorContext;
 import acme.client.components.validation.AbstractValidator;
 import acme.client.components.validation.Validator;
 import acme.client.helpers.MomentHelper;
-import acme.entities.Legs;
+import acme.entities.legs.Legs;
 
 @Validator
 public class LegsValidator extends AbstractValidator<ValidLegs, Legs> {
