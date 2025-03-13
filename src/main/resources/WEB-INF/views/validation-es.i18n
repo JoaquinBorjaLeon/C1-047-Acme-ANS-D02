@@ -1,3 +1,4 @@
+acme.validation.maintenancerecord.nextinspectiondate.message = La fecha de próxima revisión debe ser posterior a la fecha de última actual.
 acme.validation.review.missing-relation.message=Reseña no válida. Debe estar presente al menos uno de los siguientes: serviceReviewed, airlineReviewed, airportReviewed o flightReviewed.
 
 acme.validation.customer.invalid-identifier.message=Identificador no válido. Debe seguir el patrón ^[A-Z]{2,3}\\d{6}$ y coincidir con las iniciales del cliente.

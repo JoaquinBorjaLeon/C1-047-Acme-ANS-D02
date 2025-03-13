@@ -1,3 +1,4 @@
+acme.validation.maintenancerecord.nextinspectiondate.message = Next inspection date should be after moment of inspection.
 acme.validation.review.missing-relation.message=Invalid review. At least one of serviceReviewed, airlineReviewed, airportReviewed, or flightReviewed must be present.
 
 acme.validation.legs.flight-number.message = The flight number must be composed by the airline IATA code followed by four digits.
