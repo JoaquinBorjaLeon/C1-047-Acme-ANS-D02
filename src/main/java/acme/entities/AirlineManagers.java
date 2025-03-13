@@ -1,58 +1,55 @@
 
-package acme.entities.FlightAssignment;
+package acme.entities;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.Valid;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 
-import acme.client.components.basis.AbstractEntity;
+import acme.client.components.basis.AbstractRole;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidString;
-import acme.entities.FlightCrewMember.FlightCrewMember;
+import acme.client.components.validation.ValidUrl;
+import acme.constraints.ValidIdentifierNumber;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class FlightAssignment extends AbstractEntity {
+@ValidIdentifierNumber
+@EqualsAndHashCode(callSuper = true)
+public class AirlineManagers extends AbstractRole {
 
 	private static final long	serialVersionUID	= 1L;
 
 	@Mandatory
-	@Valid
-	@ManyToOne(optional = false)
-	private Leg					leg;
+	@ValidString(pattern = "^[A-Z]{2-3}\\d{6}$")
+	@Column(unique = true)
+	private String				identifierNumber;
 
 	@Mandatory
-	@Valid
-	@ManyToOne(optional = false)
-	private FlightCrewMember	allocatedFlightCrewMember;
-
-	@Mandatory
-	@Valid
+	@Min(0)
+	@Max(120)
 	@Automapped
-	private CrewsDuty			duty;
+	private Integer				experience;
 
 	@Mandatory
 	@ValidMoment(min = "2000/01/01 00:00:00", past = true)
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date				momentLastUpdate;
-
-	@Mandatory
-	@Valid
-	@Automapped
-	private AssigmentStatus		currentStatus;
+	private Date				birthdate;
 
 	@Optional
-	@ValidString(min = 0, max = 255)
 	@Automapped
-	private String				remarks;
+	@ValidUrl
+	private String				linkPicture;
+
 }

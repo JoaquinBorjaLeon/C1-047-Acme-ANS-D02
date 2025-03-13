@@ -1,10 +1,10 @@
 
-package acme.entities.FlightAssignment;
+package acme.entities;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -13,46 +13,52 @@ import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
+import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidString;
-import acme.entities.FlightCrewMember.FlightCrewMember;
+import acme.client.components.validation.ValidUrl;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class FlightAssignment extends AbstractEntity {
+public class Airline extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
 	@Mandatory
-	@Valid
-	@ManyToOne(optional = false)
-	private Leg					leg;
+	@ValidString(min = 1, max = 50)
+	@Automapped
+	private String				name;
 
 	@Mandatory
-	@Valid
-	@ManyToOne(optional = false)
-	private FlightCrewMember	allocatedFlightCrewMember;
+	@ValidString(min = 3, max = 3, pattern = "^[A-Z]{3}$")
+	@Column(unique = true)
+	private String				iataCode;
+
+	@Mandatory
+	@ValidUrl
+	@Automapped
+	private String				websiteUrl;
 
 	@Mandatory
 	@Valid
 	@Automapped
-	private CrewsDuty			duty;
+	private AirlineStatus		type;
 
 	@Mandatory
 	@ValidMoment(min = "2000/01/01 00:00:00", past = true)
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date				momentLastUpdate;
-
-	@Mandatory
-	@Valid
-	@Automapped
-	private AssigmentStatus		currentStatus;
+	private Date				foundationMoment;
 
 	@Optional
-	@ValidString(min = 0, max = 255)
+	@ValidEmail
 	@Automapped
-	private String				remarks;
+	private String				email;
+
+	@Optional
+	@ValidString(pattern = "^\\+?\\d{6,15}$")
+	@Automapped
+	private String				phoneNumber;
 }
