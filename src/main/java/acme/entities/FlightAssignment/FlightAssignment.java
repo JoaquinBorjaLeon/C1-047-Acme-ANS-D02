@@ -1,5 +1,5 @@
 
-package acme.entities;
+package acme.entities.FlightAssignment;
 
 import java.util.Date;
 
@@ -38,7 +38,7 @@ public class FlightAssignment extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@Automapped
-	private CrewsDuty				duty;
+	private CrewsDuty			duty;
 
 	@Mandatory
 	@ValidMoment(min = "2000/01/01 00:00:00", past = true)
