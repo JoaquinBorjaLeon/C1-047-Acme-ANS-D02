@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
+import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
@@ -21,23 +22,23 @@ public class Task extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
-	@Enumerated(EnumType.STRING)
 	@Mandatory
+	@Valid
 	@Automapped
-	private Type type;
+	private TaskType type;
 
-	@ValidString(max = 255)
 	@Mandatory
+	@ValidString(min =1, max = 255)
 	@Automapped
 	private String description;
-	
-	@ValidNumber(min = 0, max =10)
+
 	@Mandatory
+	@ValidNumber(min = 0, max =10)
 	@Automapped
 	private Integer	priority;
 
-	@ValidNumber(min = 0)
 	@Mandatory
+	@ValidNumber(min = 0, max = 700000)
 	@Automapped
 	private Integer	duration;
 
@@ -46,8 +47,5 @@ public class Task extends AbstractEntity {
 //	@Mandatory
 //	@Automapped
 //	private Technician technician;
-	
-	public enum Type {
-		MAINTENANCE, INSPECTION, REPAIR, SYSTEM_CHECK
-	}
+
 }
