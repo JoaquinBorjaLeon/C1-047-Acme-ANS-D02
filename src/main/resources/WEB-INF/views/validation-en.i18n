@@ -1,3 +1,4 @@
+acme.validation.review.missing-relation.message=Invalid review. At least one of serviceReviewed, airlineReviewed, airportReviewed, or flightReviewed must be present.
 
 acme.validation.legs.flight-number.message = The flight number must be composed by the airline IATA code followed by four digits.
 acme.validation.legs.current-dates.message = The date of departure and arrival of the flight must be greater than the current one.
