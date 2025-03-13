@@ -1,11 +1,13 @@
 
-package acme.entities;
+package acme.entities.trackinglog;
 
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
@@ -44,11 +46,12 @@ public class TrackingLog extends AbstractEntity {
 	private double				resolutionPercentage;
 
 	@Mandatory
+	@Valid
 	@Automapped
-	private boolean				accepted;
+	private TrackingLogStatus	status;
 
 	@Optional
-	@ValidString(min = 1, max = 255)
+	@ValidString(min = 0, max = 255)
 	@Automapped
 	private String				resolution;
 
@@ -56,9 +59,9 @@ public class TrackingLog extends AbstractEntity {
 
 	// Relationships ----------------------------------------------------------
 
-	// @Mandatory
-	// @Valid
-	// @ManyToOne(optional = false)
-	// private Claim				claim;
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private Claim				claim;
 
 }
