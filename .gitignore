@@ -23,9 +23,11 @@
 hs_err_pid*
 replay_pid*
 
-# Target Folder #
+# Generated Folders #
 /target/
 /target/*
+/bin/
+/logs/
 
 # Classpath File #
 .classpath

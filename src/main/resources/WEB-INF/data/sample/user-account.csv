@@ -8,3 +8,28 @@ user-account-provider-03,true,"UserIdentity{name: 'Antonia', surname: 'אבטי�
 user-account-agent-01,true,"UserIdentity{name: 'Alberto', surname: 'Aznar', email: 'alberto@acme.com'}",agent1,agent1
 user-account-agent-02,true,"UserIdentity{name: 'Zaida', surname: 'Zamora', email: 'juancarlos@acme.com'}",agent2,agent2
 user-account-agent-03,true,"UserIdentity{name: 'Anabel', surname: 'Gonzalez', email: 'anabel@acme.com'}",agent3,agent3
+user-account-customer-01,true,"UserIdentity{name: 'AAA', surname: 'BBB CCC', email: 'ABC@acme.com'}",customer1,customer1
+user-account-customer-02,true,"UserIdentity{name: 'AAA', surname: 'BBB', email: 'AB@acme.com'}",customer2,customer2
+user-account-customer-03,true,"UserIdentity{name: 'No', surname: 'Customer', email: 'nocustomer@acme.com'}",customer3,customer3
+user-account-customer-04,true,"UserIdentity{name: 'YYY', surname: 'YYY YYY', email: 'YYY@acme.com'}",customer4,customer4
+user-account-customer-05,true,"UserIdentity{name: 'XXX', surname: 'XXX XXX', email: 'XXX@acme.com'}",customer5,customer5
+user-account-customer-06,true,"UserIdentity{name: 'WWW', surname: 'WWW WWW', email: 'WWW@acme.com'}",customer6,customer6
+user-account-customer-07,true,"UserIdentity{name: 'VVV', surname: 'VVV VVV', email: 'VVV@acme.com'}",customer7,customer7
+user-account-customer-08,true,"UserIdentity{name: 'UUU', surname: 'UUU UUU', email: 'UUU@acme.com'}",customer8,customer8
+user-account-customer-09,true,"UserIdentity{name: 'TTT', surname: 'TTT TTT', email: 'TTT@acme.com'}",customer9,customer9
+user-account-customer-10,true,"UserIdentity{name: 'SSS', surname: 'SSS SSS', email: 'SSS@acme.com'}",customer10,customer10
+user-account-customer-11,true,"UserIdentity{name: 'RRR', surname: 'RRR RRR', email: 'RRR@acme.com'}",customer11,customer11
+user-account-customer-12,true,"UserIdentity{name: 'QQQ', surname: 'QQQ QQQ', email: 'QQQ@acme.com'}",customer12,customer12
+user-account-customer-13,true,"UserIdentity{name: 'PPP', surname: 'PPP PPP', email: 'PPP@acme.com'}",customer13,customer13
+user-account-customer-14,true,"UserIdentity{name: 'OOO', surname: 'OOO OOO', email: 'OOO@acme.com'}",customer14,customer14
+user-account-customer-15,true,"UserIdentity{name: 'NNN', surname: 'NNN NNN', email: 'NNN@acme.com'}",customer15,customer15
+user-account-customer-16,true,"UserIdentity{name: 'MMM', surname: 'MMM MMM', email: 'MMM@acme.com'}",customer16,customer16
+user-account-customer-17,true,"UserIdentity{name: 'LLL', surname: 'LLL LLL', email: 'LLL@acme.com'}",customer17,customer17
+user-account-customer-18,true,"UserIdentity{name: 'KKK', surname: 'KKK KKK', email: 'KKK@acme.com'}",customer18,customer18
+user-account-customer-19,true,"UserIdentity{name: 'JJJ', surname: 'JJJ JJJ', email: 'JJJ@acme.com'}",customer19,customer19
+user-account-customer-20,true,"UserIdentity{name: 'III', surname: 'III III', email: 'III@acme.com'}",customer20,customer20
+user-account-customer-21,true,"UserIdentity{name: '中国', surname: '中国', email: 'chino@acme.com'}",customer21,customer21
+user-account-manager-00,true,"UserIdentity{name: 'Antonio', surname: 'Fernández', email: 'antonio@acme.com'}",manager0,manager0
+user-account-manager-01,true,"UserIdentity{name: 'Maria', surname: 'Nuñez', email: 'maria@acme.com'}",manager1,manager1
+user-account-manager-02,true,"UserIdentity{name: 'Mauricio', surname: 'Martínez', email: 'mauricio@acme.com'}",manager2,manager2
+user-account-manager-03,true,"UserIdentity{name: 'Rafael', surname: 'Miguez', email: 'rafael@acme.com'}",manager3,manager3
