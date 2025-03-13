@@ -15,6 +15,8 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidString;
+import acme.entities.AssistanceAgent;
+import acme.entities.legs.Legs;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -67,6 +69,6 @@ public class Claim extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Leg					leg;
+	private Legs				leg;
 
 }
