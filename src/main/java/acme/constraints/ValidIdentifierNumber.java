@@ -1,5 +1,5 @@
 
-package acme.constraints.FlightCrewMember;
+package acme.constraints;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -13,11 +13,11 @@ import javax.validation.Payload;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@Constraint(validatedBy = FlightCrewMemberValidator.class)
+@Constraint(validatedBy = IdentifierNumberValidator.class)
 
-public @interface ValidFlightCrewMember {
+public @interface ValidIdentifierNumber {
 
-	String message() default "{acme.validation.flightcrewmember.identifier.message}";
+	String message() default "{acme.validation.airlinemanagers.identifier.message}";
 	Class<?>[] groups() default {};
 	Class<? extends Payload>[] payload() default {};
 
