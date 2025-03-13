@@ -6,7 +6,7 @@ import javax.validation.ConstraintValidatorContext;
 import acme.client.components.principals.DefaultUserIdentity;
 import acme.client.components.validation.AbstractValidator;
 import acme.client.helpers.StringHelper;
-import acme.entities.AirlineManagers;
+import acme.entities.airlinemanagers.AirlineManagers;
 
 public class IdentifierNumberValidator extends AbstractValidator<ValidIdentifierNumber, AirlineManagers> {
 
