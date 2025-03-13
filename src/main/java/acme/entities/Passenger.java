@@ -1,5 +1,5 @@
-//
-package acme.entities.Airline;
+
+package acme.entities;
 
 import java.util.Date;
 

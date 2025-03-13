@@ -1,4 +1,5 @@
 //
+
 package acme.entities.Airline;
 
 import java.util.Date;
@@ -24,7 +25,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Passenger extends AbstractEntity {
+public class Airline extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
