@@ -1,4 +1,3 @@
-//
 
 package acme.entities.Airline;
 
