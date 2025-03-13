@@ -55,8 +55,8 @@ public class Aircraft extends AbstractEntity {
 	@Automapped
 	private String notes;
 	
-//	@Mandatory
-//	@Valid
-//	@ManyToOne
-//	private Airline airline;
+	@Mandatory
+	@Valid
+	@ManyToOne
+	private Airline airline;
 }
