@@ -16,7 +16,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Technichian extends AbstractRole {
+public class Technician extends AbstractRole {
 
 	private static final long serialVersionUID = 1L;
 
@@ -27,7 +27,7 @@ public class Technichian extends AbstractRole {
 	private String licenseNumber;
 
 	@Mandatory
-	@ValidString(min=6, max=15, pattern = "^[+]?[0,9]{6,15}$")
+	@ValidString(min=6, max=16, pattern = "^[+]?[0-9]{6,15}$")
 	@Automapped
 	private String phoneNumber;
 
