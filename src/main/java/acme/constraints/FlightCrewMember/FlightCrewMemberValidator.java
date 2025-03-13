@@ -1,12 +1,12 @@
 
-package acme.constraints;
+package acme.constraints.FlightCrewMember;
 
 import javax.validation.ConstraintValidatorContext;
 
 import acme.client.components.principals.DefaultUserIdentity;
 import acme.client.components.validation.AbstractValidator;
 import acme.client.helpers.StringHelper;
-import acme.entities.FlightCrewMember;
+import acme.entities.FlightCrewMember.FlightCrewMember;
 
 public class FlightCrewMemberValidator extends AbstractValidator<ValidFlightCrewMember, FlightCrewMember> {
 	// Internal state ---------------------------------------------------------
