@@ -1,5 +1,5 @@
 
-package acme.entities.FlightAssignment;
+package acme.entities.maintenancerecord;
 
 import java.util.Date;
 
@@ -10,50 +10,58 @@ import javax.persistence.TemporalType;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
+import acme.client.components.datatypes.Money;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
+import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
-import acme.entities.legs.Leg;
-import acme.realms.FlightCrewMember.FlightCrewMember;
+import acme.entities.aircraft.Aircraft;
+import acme.realms.technician.Technician;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class FlightAssignment extends AbstractEntity {
+public class MaintenanceRecord extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
 	@Mandatory
-	@Valid
-	@ManyToOne(optional = false)
-	private Leg				leg;
-
-	@Mandatory
-	@Valid
-	@ManyToOne(optional = false)
-	private FlightCrewMember	allocatedFlightCrewMember;
-
-	@Mandatory
-	@Valid
-	@Automapped
-	private CrewsDuty			duty;
-
-	@Mandatory
-	@ValidMoment(min = "2000/01/01 00:00:00", past = true)
+	@ValidMoment
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date				momentLastUpdate;
+	private Date maintenaceMoment;
 
 	@Mandatory
 	@Valid
 	@Automapped
-	private AssigmentStatus		currentStatus;
+	private MaintenanceRecordStatus status;
 
-	@Optional
-	@ValidString(min = 0, max = 255)
+	@Mandatory
+	@ValidMoment
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date nextInspectionDate;
+
+	@Mandatory
+	@ValidMoney(min = 0, max=1000000)
 	@Automapped
-	private String				remarks;
+	private Money estimatedCost;
+
+	@ValidString(min=1, max = 255)
+	@Optional
+	@Automapped
+	private String notes;
+
+	@ManyToOne
+	@Mandatory
+	@Automapped
+	private Aircraft aircraft;
+	
+	@ManyToOne
+	@Mandatory
+	@Automapped
+	private Technician technician;
+
 }

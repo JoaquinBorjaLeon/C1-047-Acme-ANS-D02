@@ -1,12 +1,14 @@
 
-package acme.realms.airlinemanagers;
+package acme.realms.airlinemanager;
 
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractRole;
 import acme.client.components.mappings.Automapped;
@@ -17,6 +19,7 @@ import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
 import acme.client.components.validation.ValidUrl;
 import acme.constraints.ValidIdentifierNumber;
+import acme.entities.airline.Airline;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -26,12 +29,12 @@ import lombok.Setter;
 @Setter
 @ValidIdentifierNumber
 @EqualsAndHashCode(callSuper = true)
-public class AirlineManagers extends AbstractRole {
+public class AirlineManager extends AbstractRole {
 
 	private static final long	serialVersionUID	= 1L;
 
 	@Mandatory
-	@ValidString(pattern = "^[A-Z]{2-3}\\d{6}$")
+	@ValidString(pattern = "^[A-Z]{2,3}\\d{6}$")
 	@Column(unique = true)
 	private String				identifierNumber;
 
@@ -44,6 +47,11 @@ public class AirlineManagers extends AbstractRole {
 	@ValidMoment(past = true)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				birthdate;
+
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private Airline				airline;
 
 	@Optional
 	@Automapped

@@ -1,11 +1,8 @@
 
 package acme.entities.aircraft;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 
@@ -15,7 +12,7 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
-import acme.entities.Airline.Airline;
+import acme.entities.airline.Airline;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -27,37 +24,37 @@ public class Aircraft extends AbstractEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	@Mandatory
-	@ValidString(min=1, max = 50)
+	@ValidString(min = 1, max = 50)
 	@Automapped
-	private String model;
+	private String				model;
 
 	@Mandatory
-	@ValidString(min=1, max = 50)
+	@ValidString(min = 1, max = 50)
 	@Column(unique = true)
-	private String regNumber;
+	private String				regNumber;
 
 	@Mandatory
-	@ValidNumber(min=0, max = 50000)
+	@ValidNumber(min = 0, max = 50000)
 	@Automapped
-	private Integer capacity;
+	private Integer				capacity;
 
 	@Mandatory
-	@ValidNumber(min=2000, max=50000)
+	@ValidNumber(min = 2000, max = 50000)
 	@Automapped
-	private Double cargoWeight;
+	private Double				cargoWeight;
 
 	@Mandatory
 	@Valid
 	@Automapped
-	private AircraftStatus status;
+	private AircraftStatus		status;
 
 	@Optional
 	@ValidString(max = 255)
 	@Automapped
-	private String notes;
-	
+	private String				notes;
+
 	@Mandatory
 	@Valid
 	@ManyToOne
-	private Airline airline;
+	private Airline				airline;
 }

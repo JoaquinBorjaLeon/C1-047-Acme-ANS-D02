@@ -1,11 +1,10 @@
 
-package acme.entities.Airline;
+package acme.entities.airline;
 
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -17,7 +16,7 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidString;
-import acme.entities.booking.Booking;
+import acme.client.components.validation.ValidUrl;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -27,40 +26,40 @@ import lombok.Setter;
 public class Airline extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
-	
+
 	@Mandatory
-	@ValidString(pattern = "^[A-Z]{3}$", min = 3, max = 3)
+	@ValidString(max = 50)
+	@Automapped
+	private String				name;
+
+	@Mandatory
+	@ValidString(pattern = "^[A-Z]{3}$")
 	@Column(unique = true)
 	private String				iataCode;
 
 	@Mandatory
-	@ValidString(min = 1, max = 255)
+	@ValidUrl
 	@Automapped
-	private String				fullName;
-
-	@Mandatory
-	@ValidEmail
-	@Column(unique = true)
-	private String				email;
-
-	@ValidString(min = 6, max = 9, pattern = "^[A-Z0-9]{6,9}$")
-	@Mandatory
-	@Column(unique = true)
-	private String				passport;
-
-	@Mandatory
-	@ValidMoment(min = "1900/01/01 00:00:00", past = true)
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date				birthDate;
-
-	@Optional
-	@ValidString(min = 0, max = 50)
-	@Automapped
-	private String				specialNeeds;
+	private String				websiteUrl;
 
 	@Mandatory
 	@Valid
-	@ManyToOne(optional = false)
-	private Booking				booking;
+	@Automapped
+	private AirlineType			type;
+
+	@Mandatory
+	@ValidMoment(past = true)
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				foundationMoment;
+
+	@Optional
+	@ValidEmail
+	@Automapped
+	private String				email;
+
+	@Optional
+	@ValidString(pattern = "^[+]?[0-9]{6,15}$")
+	@Automapped
+	private String				phoneNumber;
 
 }
