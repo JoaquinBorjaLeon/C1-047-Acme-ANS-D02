@@ -1,5 +1,5 @@
 
-package acme.entities.MaintenanceRecord;
+package acme.entities.maintenancerecord;
 
 import java.util.Date;
 

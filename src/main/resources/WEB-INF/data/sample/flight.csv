@@ -1,7 +1,6 @@
 key,tag,requiresSelfTransfer,cost,description,key:airline
 #base-entity
 flight-00,Lorem ipsum dolor sit ame,true,EUR 1000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,airline-01
-
 #tag
 flight-01,L,true,EUR 1000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,airline-01
 flight-02,Lo,true,EUR 1000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,airline-01
@@ -13,17 +12,14 @@ flight-07,洛伦·伊普森,true,EUR 1000.00,Lorem ipsum dolor sit amet consecte
 flight-08,<marquee>Hacked</marquee>,true,EUR 1000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,airline-01
 flight-09,<script>alert('Hacked!');</script>,true,EUR 1000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,airline-01
 flight-10,'or 'A' = 'A,true,EUR 1000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,airline-01
-
 #requiresSelfTransfer
 flight-11,Lorem ipsum dolor sit ame,true,EUR 1000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,airline-01
 flight-12,Lorem ipsum dolor sit ame,false,EUR 1000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,airline-01
-
 #cost
 flight-13,Lorem ipsum dolor sit ame,true,EUR 1.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,airline-01
 flight-14,Lorem ipsum dolor sit ame,true,EUR 1.01,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,airline-01
 flight-15,Lorem ipsum dolor sit ame,true,EUR 2000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,airline-01
 flight-16,Lorem ipsum dolor sit ame,true,EUR 1999.99,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,airline-01
-
 #description
 flight-17,Lorem ipsum dolor sit ame,true,EUR 1000.00,L,airline-01
 flight-18,Lorem ipsum dolor sit ame,true,EUR 1000.00,Lo,airline-01
@@ -36,7 +32,6 @@ flight-24,Lorem ipsum dolor sit ame,true,EUR 1000.00,<marquee>Hacked</marquee>,a
 flight-25,Lorem ipsum dolor sit ame,true,EUR 1000.00,<script>alert('Hacked!');</script>,airline-01
 flight-26,Lorem ipsum dolor sit ame,true,EUR 1000.00,'or 'A' = 'A,airline-01
 flight-27,Lorem ipsum dolor sit ame,true,EUR 1000.00,null,airline-01
-
 #key:airline
 flight-28,Lorem ipsum dolor sit ame,true,EUR 1000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,airline-02
 flight-29,Lorem ipsum dolor sit ame,true,EUR 1000.00,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,airline-03

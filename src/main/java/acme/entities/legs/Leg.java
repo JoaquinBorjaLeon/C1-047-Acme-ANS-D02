@@ -47,12 +47,12 @@ public class Leg extends AbstractEntity {
 
 	@Mandatory
 	@Valid
-	@Automapped
+	@ManyToOne(optional = false)
 	private Airport				departureAirport;
 
 	@Mandatory
 	@Valid
-	@Automapped
+	@ManyToOne(optional = false)
 	private Airport				arrivalAirport;
 
 	@Mandatory
@@ -67,12 +67,12 @@ public class Leg extends AbstractEntity {
 
 	@Mandatory
 	@Valid
-	@ManyToOne
+	@ManyToOne(optional = false)
 	private Aircraft			aircraft;
-	
+
 	@Mandatory
 	@Valid
 	@ManyToOne
-	private Flight flight;
+	private Flight				flight;
 
 }

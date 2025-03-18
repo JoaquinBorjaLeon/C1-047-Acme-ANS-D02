@@ -6,7 +6,7 @@ import javax.validation.ConstraintValidatorContext;
 import acme.client.components.principals.DefaultUserIdentity;
 import acme.client.components.validation.AbstractValidator;
 import acme.client.helpers.StringHelper;
-import acme.entities.MaintenanceRecord.MaintenanceRecord;
+import acme.entities.maintenancerecord.MaintenanceRecord;
 
 public class NextInspectionDateValidator extends AbstractValidator<ValidNextInspectionDate, MaintenanceRecord> {
 

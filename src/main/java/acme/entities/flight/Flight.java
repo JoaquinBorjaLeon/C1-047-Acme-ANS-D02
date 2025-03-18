@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.Size;
 
@@ -17,6 +17,7 @@ import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoney;
 import acme.client.helpers.SpringHelper;
+import acme.entities.airline.Airline;
 import acme.entities.airport.Airport;
 import acme.entities.legs.Leg;
 import lombok.EqualsAndHashCode;
@@ -45,6 +46,11 @@ public class Flight extends AbstractEntity {
 	@ValidMoney(min = 0)
 	@Automapped
 	private Money				cost;
+
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private Airline				airline;
 
 	@Optional
 	@Size(max = 255)
