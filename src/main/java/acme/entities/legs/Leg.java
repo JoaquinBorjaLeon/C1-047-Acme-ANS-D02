@@ -1,6 +1,8 @@
 
 package acme.entities.legs;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -8,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
@@ -58,11 +61,6 @@ public class Leg extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@Automapped
-	private Double				duration;
-
-	@Mandatory
-	@Valid
-	@Automapped
 	private LegType				status;
 
 	@Mandatory
@@ -74,5 +72,16 @@ public class Leg extends AbstractEntity {
 	@Valid
 	@ManyToOne
 	private Flight				flight;
+
+
+	@Transient
+	public int durationInHours() {
+		Instant departureInstant = this.scheduledDeparture.toInstant();
+		Instant arrivalInstant = this.scheduledArrival.toInstant();
+
+		Duration duration = Duration.between(departureInstant, arrivalInstant);
+
+		return duration.toHoursPart();
+	}
 
 }
